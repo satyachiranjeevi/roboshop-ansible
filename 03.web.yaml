@@ -1,6 +1,7 @@
 --- # start of the yaml
 - name: install web on Linux server
   hosts: web
+  become: yes
   tasks:
   - name: install nginx
     become: yes # sudo acces to create user
@@ -11,7 +12,7 @@
     ansible.builtin.service:
       name: nginx
       state: started
-      
+      enabled: yes
   - name: remove html directory 
     ansible.builtin.file:
       path: /usr/share/nginx/html
