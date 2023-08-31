@@ -12,7 +12,7 @@
       status: installed
   - name: user add
     ansible.builtin.command: id roboshot
-      register: output
+    register: output
       ignore_errors: true
 
   - when: output.rc != 0
