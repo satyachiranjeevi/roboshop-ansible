@@ -11,7 +11,7 @@
       name: nodejs
       state: installed
   - name: user add
-    ansible.builtin.command: id roboshot
+    ansible.builtin.command: id roboshop
     register: output
     ignore_errors: true
 
