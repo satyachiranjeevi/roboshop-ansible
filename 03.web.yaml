@@ -4,6 +4,7 @@
   tasks:
   - name: install nginx
     ansible.builtin.yum:
+      become: yes
       name: nginx
       state: installed
   - name: enable and start web 
