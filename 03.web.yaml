@@ -3,8 +3,8 @@
   hosts: web
   tasks:
   - name: install nginx
+    become: yes # sudo acces to create user
     ansible.builtin.yum:
-      become: yes
       name: nginx
       state: installed
   - name: enable and start web 
