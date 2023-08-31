@@ -13,7 +13,7 @@
   - name: user add
     ansible.builtin.command: id roboshot
     register: output
-      ignore_errors: true
+    ignore_errors: true
 
   - when: output.rc != 0
     name: create user roboshop
@@ -21,7 +21,6 @@
     ansible.builtin.user:
       name: roboshop
     
-
   - name: create app direcotry
     ansible.builtin.stat:
       path: /app
