@@ -1,0 +1,32 @@
+--- # start of the Yaml 
+- name: install mongodb on Linux server
+  hosts: mongodb
+  become: yes
+  # tasks will start from here
+  tasks:
+  - name: copy mongo.repo to yum.repos.d
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+  - name: install mongodb
+    ansible.builtin.yum:
+      name: mongodb-org
+      state: installed
+  - name: enable mongodb service
+    ansible.builtin.service:
+      name: mongod
+      state: enabled
+  - name: start mongodb service
+    ansible.builtin.service:
+      name: mongod
+      state: enabled
+  - name: Update IP address
+      ansible.builtin.service:
+        name: mongod
+        state: enabled
+  - name: restart mongodb service
+    ansible.builtin.service:
+      name: mongod
+      state: restarted
+  
+... # end of the yaml
