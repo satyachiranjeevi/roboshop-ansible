@@ -32,7 +32,7 @@
       path: /app
       state: directory
 
- - name: download cart artifacts
+  - name: download cart artifacts
     ansible.builtin.get_url: 
       url: https://roboshop-builds.s3.amazonaws.com/cart.zip
       dest: /tmp
