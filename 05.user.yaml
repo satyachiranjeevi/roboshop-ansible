@@ -33,7 +33,7 @@
       path: /app
       state: directory
 
- - name: download user artifacts
+  - name: download user artifacts
     ansible.builtin.get_url: 
       url: https://roboshop-builds.s3.amazonaws.com/user.zip
       dest: /tmp
