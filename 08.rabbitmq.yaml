@@ -2,8 +2,11 @@
   hosts: rabbitmq
   become: yes
   tasks:
-  - name: download repo
-    ansible.builtin.command: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+  - name: configure rabbitmq yum repos
+    ansible.builtin.shell: "{{item}}"
+    loop:
+    - "curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash"
+    - "curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash"
 
   - name: install rabbit mq
     ansible.builtin.yum:
