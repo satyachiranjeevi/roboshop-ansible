@@ -44,12 +44,12 @@
   - name: clean package and change directory
     ansible.builtin.command: mvn clean package
     args:
-      chdr: /app
+      chdir: /app
   
   - name: jar files
     ansbile.builtin.command: mv target/shipping-1.0.jar shipping.jar
     args:
-      chdr: /app
+      chdir: /app
 
   - name: copy shipping service
     ansible.builtin.copy:
