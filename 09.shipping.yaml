@@ -40,14 +40,13 @@
       dest: /app
       remote_src: yes
 
-
   - name: clean package and change directory
     ansible.builtin.command: mvn clean package
     args:
       chdir: /app
   
-  - name: jar files
-    ansbile.builtin.command: mv target/shipping-1.0.jar shipping.jar
+  - name: rename jarfile
+    ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
     args:
       chdir: /app
 
