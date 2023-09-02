@@ -1,5 +1,6 @@
 - name: install rabbitmq on linux server
   hosts: rabbitmq
+  become: yes
   tasks:
   - name: download repo
     ansible.builtin.command: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash

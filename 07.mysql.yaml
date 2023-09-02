@@ -1,6 +1,7 @@
 --- # start of the yaml
 - name: install mysql on linux server
   hosts: mysql
+  become: yes
   tasks:
   - name: disable mysql package
     ansible.builtin.command: yum module disable mysql -y

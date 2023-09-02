@@ -1,6 +1,7 @@
 --- # start of the yaml
 - name: install user service on linux server
   hosts: user
+  become: yes
   tasks:
   - name: download nodejs repos
     ansible.builtin.shell: "curl -sL https://rpm.nodesource.com/setup_lts.x | bash"
@@ -9,7 +10,7 @@
     ansible.builtin.yum:
       name: nodejs
       state: installed
-      
+
   - name: user add
     ansible.builtin.command: id roboshop
     register: output

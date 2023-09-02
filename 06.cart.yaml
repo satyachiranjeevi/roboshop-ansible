@@ -1,6 +1,7 @@
 --- # start of the yaml
 - name: install cart service on linux server
   hosts: cart
+  become: yes
   tasks:
   - name: download nodejs repos
     ansible.builtin.shell: "curl -sL https://rpm.nodesource.com/setup_lts.x | bash"
